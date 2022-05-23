@@ -58,6 +58,7 @@ namespace SWARM.Server.Controllers.Crse
         }
 
         [HttpPost]
+        [Route("PostCourse")]
         public async Task<IActionResult> Post([FromBody] CourseDTO _CourseDTO)
         {
             var trans = _context.Database.BeginTransaction();
@@ -85,7 +86,7 @@ namespace SWARM.Server.Controllers.Crse
 
 
 
-        [HttpPost]
+        [HttpPut]
         [Route("GetCourses")]
         public async Task<DataEnvelope<CourseDTO>> GetCoursesPost([FromBody] DataSourceRequest gridRequest)
         {
